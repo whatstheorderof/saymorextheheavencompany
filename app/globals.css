@@ -301,8 +301,7 @@ input {
 
 .authPanel,
 .packs,
-.table,
-.details {
+.table {
   border: 1px solid rgba(44, 41, 37, 0.1);
   border-radius: 8px;
   background: rgba(250, 248, 243, 0.86);
@@ -334,8 +333,7 @@ input {
 }
 
 .authPanel span,
-.packHeader span,
-.details span {
+.packHeader span {
   color: var(--clay);
   font-size: 0.72rem;
   font-weight: 900;
@@ -352,15 +350,14 @@ input {
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(240px, 310px) minmax(380px, 1fr) minmax(260px, 330px);
-  gap: 18px;
+  grid-template-columns: minmax(240px, 320px) minmax(520px, 1fr);
+  gap: 22px;
   align-items: start;
   scroll-margin-top: 18px;
   min-width: 0;
 }
 
-.packs,
-.details {
+.packs {
   position: sticky;
   top: 18px;
   max-height: calc(100vh - 36px);
@@ -427,7 +424,7 @@ input {
 }
 
 .table {
-  padding: 18px;
+  padding: 22px;
   min-width: 0;
 }
 
@@ -450,10 +447,10 @@ input {
 .card {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  width: min(430px, 100%);
-  min-height: 500px;
-  margin: 22px auto;
-  padding: 30px;
+  width: min(620px, 100%);
+  min-height: 590px;
+  margin: 26px auto;
+  padding: 38px;
   border: 10px solid var(--gold-lt);
   border-radius: 28px;
   background: var(--cream);
@@ -502,9 +499,9 @@ input {
 .card p {
   align-self: center;
   margin: 0 auto;
-  max-width: 340px;
+  max-width: 500px;
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.45rem, 2.05vw, 1.85rem);
+  font-size: clamp(1.65rem, 2.35vw, 2.3rem);
   line-height: 1.18;
   text-align: center;
 }
@@ -528,31 +525,6 @@ input {
   color: var(--teal);
   font-weight: 850;
   text-align: center;
-}
-
-.details h2 {
-  margin: 10px 0;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 1.55rem;
-  font-weight: 600;
-}
-
-.details p {
-  color: var(--muted);
-  line-height: 1.45;
-}
-
-.collectionBox,
-.trialBox {
-  margin-top: 16px;
-  padding: 14px;
-  border: 1px solid rgba(201, 168, 76, 0.28);
-  border-radius: 8px;
-  background: rgba(242, 237, 227, 0.72);
-}
-
-.collectionBox p {
-  margin-bottom: 0;
 }
 
 .warning {
@@ -579,8 +551,7 @@ input {
     width: min(260px, 64vw);
   }
 
-  .packs,
-  .details {
+  .packs {
     position: static;
     max-height: none;
   }
@@ -672,8 +643,7 @@ input {
   }
 
   .packs,
-  .table,
-  .details {
+  .table {
     padding: 14px;
   }
 

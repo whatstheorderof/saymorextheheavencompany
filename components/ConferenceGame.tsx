@@ -14,9 +14,6 @@ export default function ConferenceGame() {
       tertiaryActionLabel={null}
       tertiaryAction="conference-pack"
       showCommerce={false}
-      collectionLabel="Conference Edition"
-      collectionTitle="Guildhall, City of London | 19 May 2026"
-      collectionDescription="25 questions to take back to your organisation, moving inclusion and belonging from aspiration to action."
       heroCards={[
         {
           label: "Awareness",

@@ -33,10 +33,7 @@ type DrawResponse = {
   error?: string;
 };
 
-const currentCollection = {
-  id: "current-collection",
-  name: "Current Collection"
-};
+const currentCollectionId = "current-collection";
 
 type HeroCardCopy = {
   label: string;
@@ -55,9 +52,6 @@ type GameClientProps = {
   tertiaryAction?: "date-packs" | "conference-pack";
   heroCards?: HeroCardCopy[];
   showCommerce?: boolean;
-  collectionLabel?: string;
-  collectionTitle?: string;
-  collectionDescription?: string;
 };
 
 const defaultHeroCards: HeroCardCopy[] = [
@@ -86,10 +80,7 @@ export default function GameClient({
   tertiaryActionLabel = "Date Packs",
   tertiaryAction = "date-packs",
   heroCards = defaultHeroCards,
-  showCommerce = true,
-  collectionLabel = "Current Collection",
-  collectionTitle = currentCollection.name,
-  collectionDescription = "Includes every paid pack available now. New future card collections will have their own bundle purchase."
+  showCommerce = true
 }: GameClientProps) {
   const [packs, setPacks] = useState(initialPacks);
   const [entitlements, setEntitlements] = useState<Record<string, boolean>>({});
@@ -266,7 +257,7 @@ export default function GameClient({
                     <button className="secondaryButton" onClick={login}>Email login link</button>
                   </>
                 )}
-                <button className="primaryButton" onClick={() => buy(currentCollection.id)} disabled={isBusy || !userEmail}>
+                <button className="primaryButton" onClick={() => buy(currentCollectionId)} disabled={isBusy || !userEmail}>
                   Unlock Current Collection
                 </button>
                 <p className="bundleHint">One purchase unlocks all current paid packs. Future collections will be separate.</p>
@@ -337,22 +328,6 @@ export default function GameClient({
           <p className="status">{status}</p>
         </section>
 
-        <aside className="details">
-          <span>{showCommerce ? (activePack?.access === "free" ? "Free Pack" : "Paid Pack") : collectionLabel}</span>
-          <h2>{activePack?.name}</h2>
-          <p>{activePack?.description}</p>
-          <div className="collectionBox">
-            <strong>{collectionTitle}</strong>
-            <p>{collectionDescription}</p>
-          </div>
-          {!unlocked && activePack && (
-            <div className="trialBox">
-              <strong>Trial included</strong>
-              <p>{activePack.trialDrawLimit} draws and {activePack.trialShuffleLimit} shuffles before purchase.</p>
-              {!activePack.hasStripePrice && <p className="warning">Add the Stripe price ID env var for this pack.</p>}
-            </div>
-          )}
-        </aside>
       </section>
       {!showCommerce && (
         <footer className="conferenceFooter" aria-label="Conference details">
