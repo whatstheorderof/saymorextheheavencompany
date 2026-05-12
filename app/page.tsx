@@ -1,6 +1,7 @@
-import GameClient from "@/components/GameClient";
-import { publicPackSummary } from "@/lib/packs";
+import ConferenceGame from "@/components/ConferenceGame";
+
+export const dynamic = "force-dynamic";
 
 export default function Page() {
-  return <GameClient initialPacks={publicPackSummary()} />;
+  return <ConferenceGame />;
 }
