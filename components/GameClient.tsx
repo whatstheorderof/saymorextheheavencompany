@@ -351,8 +351,9 @@ export default function GameClient({
             </p>
           </div>
           <div>
-            <strong>Game created by Savine Agency</strong>
-            <p>#TheImplementationImperative · #EDI · #Inclusion · #Belonging · #CityOfLondon</p>
+            <strong>Game created by Savine PR Agency</strong>
+            <p><a href="mailto:savineagency@gmail.com">savineagency@gmail.com</a></p>
+            <p className="hashtagLine">#TheImplementationImperative · #EDI · #Inclusion · #Belonging · #CityOfLondon</p>
           </div>
         </footer>
       )}

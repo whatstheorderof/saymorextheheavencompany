@@ -218,6 +218,12 @@ input {
   text-decoration: none;
 }
 
+.hashtagLine {
+  margin-top: 14px !important;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
 .contactLine {
   white-space: nowrap;
 }
