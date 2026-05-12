@@ -154,6 +154,10 @@ export default function GameClient({
     document.querySelector("#game-table")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  function scrollToCard() {
+    document.querySelector("#question-card")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
   function startPlaying() {
     scrollToGame();
     setStatus(statusIntro);
@@ -178,6 +182,7 @@ export default function GameClient({
 
   async function draw(action: "draw" | "shuffle" = "draw") {
     if (!activePack) return;
+    scrollToCard();
     setIsBusy(true);
     if (action === "shuffle") setIsShuffling(true);
     setStatus(action === "shuffle" ? "Shuffling..." : "Drawing...");
@@ -317,10 +322,10 @@ export default function GameClient({
             )}
           </div>
 
-          <article className={`card ${isShuffling ? "shuffling" : ""}`}>
+          <article className={`card ${isShuffling ? "shuffling" : ""}`} id="question-card">
             <div className="cardMeta">
               <span>{card?.category || activePack?.name || "Ready"}</span>
-              <span>{card?.id || "SM-PAY"}</span>
+              <span>{card?.id || (showCommerce ? "SM-PAY" : "SM-EDI")}</span>
             </div>
             <p>{card?.prompt || emptyPrompt}</p>
             <div className="cardFooter">
